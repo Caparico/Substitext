@@ -1,11 +1,18 @@
-jQuery.fn.substitext = function() {
-	return this.each(function() {
-		var originalText = jQuery(this).text();
+jQuery.fn.substitext = function(options) {
+	var defaults = {
+		txt: 'Mouse hover'
+	};
 
-		jQuery(this).hover(function(){
-			jQuery(this).text("Zeine mouse ist uber mir!");
+	var o = jQuery.extend(defaults, options);
+
+	return this.each(function() {
+		var e = jQuery(this);
+		var originalText = e.text();
+
+		e.hover(function(){
+			e.text(o.txt);
 		}, function() {
-			jQuery(this).text(originalText);
+			e.text(originalText);
 		});
 	});
 };
