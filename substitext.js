@@ -3,7 +3,7 @@ jQuery.fn.substitext = function() {
 		var originalText = jQuery(this).text();
 
 		jQuery(this).hover(function(){
-			jQuery(this).text("Zeine mouse hovered!");
+			jQuery(this).text("Zeine mouse ist uber mir!");
 		}, function() {
 			jQuery(this).text(originalText);
 		});
